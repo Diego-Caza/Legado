@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Legado{% endblock %}</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    {% load bootstrap4 %}
+ 
+    {# CSS Bootstrap #}
+    {% bootstrap_css %}
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{% url 'home' %}"><span><box-icon name='home' type='solid' flip='horizontal' color='#fffafa' ></box-icon></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'newcomentario' %}">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="./quehacemos.html">¿Qué hacemos?</a></li>
+            <li class="nav-item"><a class="nav-link" href="./ayuda.html">Ayuda</a></li>
+  
+          </ul>
+  
+        </div>
+  
+    </nav>
+<div class="container">
+    
+    {% block content %}
+
+    {% endblock %}
+</div>
+<footer>
+    <div class="row">
+        <div class="col-sm-4 d-flex flex-column">
+            <a href="https://www.instagram.com/caza_diego/">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCE4NfkQ_dU9pwiQu-9Pff6Q?view_as=subscriber">Youtube</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.linkedin.com/in/diego-caza-a90423151">Linkedin</a>
+        </div>
+
+        <div class="col-sm-4">
+        <address>
+            <h3>Oficina central</h3>
+            <p>Miraflores-Chaco, Argentina</p>
+            <p><span style="padding-right: 10px;"></span>cazadiegoy@gmail.com</p>
+        </address>
+        </div>
+            <div class="col-sm-4 d-flex flex-column align-items-end">
+            <a href="#">Nosotros</a>
+            <a href="#">Terminos y Condiciones</a>
+            <a href="{% url 'newcomentario' %}">Contacto</a>
+            <a href="#">¿Por qué?</a>
+        </div>
+    </div>
+</footer>
+
+
+
+        {# JS y jQuery Bootstrap #}
+    {% bootstrap_javascript jquery='full' %}
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+</body>
+</html>

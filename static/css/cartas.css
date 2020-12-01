@@ -1,0 +1,17 @@
+.card-home {
+    flex: 1 150px;
+    border-radius: 30px;
+    
+}
+.btn-leer {
+    width: 100%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+
+
+.tab-content {
+    padding-top: 10px;
+}

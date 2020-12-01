@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/cartas.css' %}">
+{% for h in historia_list %}
+    <div class="card-columns mt-10">
+        <div class="card card-home mr-2 mt-2">
+            <div class="card-body">
+                <h5 class="card-title" data-toggle="tooltip" data-placement="top" title="Leer es bueno para la salud!">{{h.titulo}}</h5>
+                <h6 class="card-subtitle text-muted" >{{h.autor}}</h6> 
+                <img class="card-img-top" src='{{h.imagen.url}}' alt="Miraflores">
+                <p class="card-text">{{h.descripcion}}
+                </p>
+            </div>
+
+                <div>
+                    <a href="{% url 'detalle' h.id %}"><button class="btn-primary btn-leer">Leer más </button></a>                    
+                </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+
+{% endblock %}

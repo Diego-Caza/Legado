@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row"><h5></h5>
+        <div class="col-6">
+            <h5 class="font-weight-bold">
+                {{object.titulo}}
+            </h5>
+        </div>
+        <div class="col-6 text-right text-monospace">Autor: {{object.autor}}</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 align-middle">
+            <div class="text-center">
+                <img src="{{ object.imagen.url }}" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-justify">{{object.texto}}</p>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+
+{% endblock %}

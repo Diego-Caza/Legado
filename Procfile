@@ -1,0 +1,1 @@
+web: gunicorn legado.wsgi --log-file -
