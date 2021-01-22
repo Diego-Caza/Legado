@@ -1,1 +1,1 @@
-web: gunicorn legado.wsgi --log-file -
+web: gunicorn Legado.wsgi
